@@ -15,6 +15,8 @@
 		CDC6871721EEEBD200DDD06F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDC6871621EEEBD200DDD06F /* Assets.xcassets */; };
 		CDC6871A21EEEBD200DDD06F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDC6871821EEEBD200DDD06F /* LaunchScreen.storyboard */; };
 		CDC6872521EEEBD200DDD06F /* MerchantCollectionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6872421EEEBD200DDD06F /* MerchantCollectionsTests.swift */; };
+		CDC6873021EEFAA600DDD06F /* MyCollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6872F21EEFAA600DDD06F /* MyCollectionsViewController.swift */; };
+		CDC6873221EF1EBB00DDD06F /* MyCollectionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6873121EF1EBB00DDD06F /* MyCollectionsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		CDC6872021EEEBD200DDD06F /* MerchantCollectionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MerchantCollectionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC6872421EEEBD200DDD06F /* MerchantCollectionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantCollectionsTests.swift; sourceTree = "<group>"; };
 		CDC6872621EEEBD200DDD06F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDC6872F21EEFAA600DDD06F /* MyCollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionsViewController.swift; sourceTree = "<group>"; };
+		CDC6873121EF1EBB00DDD06F /* MyCollectionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionsTableViewCell.swift; sourceTree = "<group>"; };
 		F4F017C71A489F60FBA85909 /* Pods-MerchantCollections.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MerchantCollections.release.xcconfig"; path = "Pods/Target Support Files/Pods-MerchantCollections/Pods-MerchantCollections.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +119,8 @@
 				CDC6871621EEEBD200DDD06F /* Assets.xcassets */,
 				CDC6871821EEEBD200DDD06F /* LaunchScreen.storyboard */,
 				CDC6871B21EEEBD200DDD06F /* Info.plist */,
+				CDC6872F21EEFAA600DDD06F /* MyCollectionsViewController.swift */,
+				CDC6873121EF1EBB00DDD06F /* MyCollectionsTableViewCell.swift */,
 			);
 			path = MerchantCollections;
 			sourceTree = "<group>";
@@ -303,6 +309,8 @@
 			files = (
 				CDC6871221EEEBD100DDD06F /* ViewController.swift in Sources */,
 				CDC6871021EEEBD100DDD06F /* AppDelegate.swift in Sources */,
+				CDC6873221EF1EBB00DDD06F /* MyCollectionsTableViewCell.swift in Sources */,
+				CDC6873021EEFAA600DDD06F /* MyCollectionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
