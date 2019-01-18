@@ -17,6 +17,10 @@
 		CDC6872521EEEBD200DDD06F /* MerchantCollectionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6872421EEEBD200DDD06F /* MerchantCollectionsTests.swift */; };
 		CDC6873021EEFAA600DDD06F /* MyCollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6872F21EEFAA600DDD06F /* MyCollectionsViewController.swift */; };
 		CDC6873221EF1EBB00DDD06F /* MyCollectionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6873121EF1EBB00DDD06F /* MyCollectionsTableViewCell.swift */; };
+		CDC6873521F159BF00DDD06F /* CustomCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6873421F159BF00DDD06F /* CustomCollection.swift */; };
+		CDC6873721F15CDF00DDD06F /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6873621F15CDF00DDD06F /* DataLoader.swift */; };
+		CDC6873921F1844300DDD06F /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6873821F1844300DDD06F /* Endpoint.swift */; };
+		CDC6873B21F1952D00DDD06F /* CollectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6873A21F1952D00DDD06F /* CollectionService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		CDC6872621EEEBD200DDD06F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDC6872F21EEFAA600DDD06F /* MyCollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionsViewController.swift; sourceTree = "<group>"; };
 		CDC6873121EF1EBB00DDD06F /* MyCollectionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionsTableViewCell.swift; sourceTree = "<group>"; };
+		CDC6873421F159BF00DDD06F /* CustomCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollection.swift; sourceTree = "<group>"; };
+		CDC6873621F15CDF00DDD06F /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		CDC6873821F1844300DDD06F /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		CDC6873A21F1952D00DDD06F /* CollectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionService.swift; sourceTree = "<group>"; };
 		F4F017C71A489F60FBA85909 /* Pods-MerchantCollections.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MerchantCollections.release.xcconfig"; path = "Pods/Target Support Files/Pods-MerchantCollections/Pods-MerchantCollections.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +121,7 @@
 		CDC6870E21EEEBD100DDD06F /* MerchantCollections */ = {
 			isa = PBXGroup;
 			children = (
+				CDC6873321F1598B00DDD06F /* Models */,
 				CDC6870F21EEEBD100DDD06F /* AppDelegate.swift */,
 				CDC6871121EEEBD100DDD06F /* ViewController.swift */,
 				CDC6871321EEEBD100DDD06F /* Main.storyboard */,
@@ -121,6 +130,9 @@
 				CDC6871B21EEEBD200DDD06F /* Info.plist */,
 				CDC6872F21EEFAA600DDD06F /* MyCollectionsViewController.swift */,
 				CDC6873121EF1EBB00DDD06F /* MyCollectionsTableViewCell.swift */,
+				CDC6873621F15CDF00DDD06F /* DataLoader.swift */,
+				CDC6873821F1844300DDD06F /* Endpoint.swift */,
+				CDC6873A21F1952D00DDD06F /* CollectionService.swift */,
 			);
 			path = MerchantCollections;
 			sourceTree = "<group>";
@@ -132,6 +144,14 @@
 				CDC6872621EEEBD200DDD06F /* Info.plist */,
 			);
 			path = MerchantCollectionsTests;
+			sourceTree = "<group>";
+		};
+		CDC6873321F1598B00DDD06F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CDC6873421F159BF00DDD06F /* CustomCollection.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,10 +327,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDC6873921F1844300DDD06F /* Endpoint.swift in Sources */,
 				CDC6871221EEEBD100DDD06F /* ViewController.swift in Sources */,
+				CDC6873721F15CDF00DDD06F /* DataLoader.swift in Sources */,
 				CDC6871021EEEBD100DDD06F /* AppDelegate.swift in Sources */,
+				CDC6873521F159BF00DDD06F /* CustomCollection.swift in Sources */,
 				CDC6873221EF1EBB00DDD06F /* MyCollectionsTableViewCell.swift in Sources */,
 				CDC6873021EEFAA600DDD06F /* MyCollectionsViewController.swift in Sources */,
+				CDC6873B21F1952D00DDD06F /* CollectionService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
