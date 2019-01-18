@@ -4,12 +4,7 @@ import Foundation
 
 
 class DataLoader {
-    enum Result {
-        case success(Data)
-        case failure(Error)
-    }
-
-    func loadData(from endpoint: Endpoint, completion: @escaping (Result) -> Void) {
+    func loadData(from endpoint: Endpoint, completion: @escaping (Result<Data>) -> Void) {
         guard let url = endpoint.url else {
             return completion(.failure(Endpoint.URLError.invalidURL))
         }

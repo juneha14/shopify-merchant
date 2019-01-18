@@ -28,8 +28,9 @@ class MyCollectionsViewController: UITableViewController {
         navigationItem.title = "My Collections"
 
         tableView.register(MyCollectionsTableViewCell.self, forCellReuseIdentifier: MyCollectionsTableViewCell.identifier)
+        tableView.tableFooterView = UIView()
 
-        loadData()
+        loadCollections()
     }
 
 
@@ -40,13 +41,12 @@ class MyCollectionsViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let myCollectionCell = tableView.dequeueReusableCell(withIdentifier: MyCollectionsTableViewCell.identifier, for: indexPath) as? MyCollectionsTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MyCollectionsTableViewCell.identifier, for: indexPath) as? MyCollectionsTableViewCell else {
             return UITableViewCell()
         }
 
-        myCollectionCell.collectionTitle.text = myCollections[indexPath.row].title
-
-        return myCollectionCell
+        cell.collection = myCollections[indexPath.row]
+        return cell
     }
 
 
@@ -59,9 +59,9 @@ class MyCollectionsViewController: UITableViewController {
 
     // MARK: Helpers
 
-    private func loadData() {
-        collectionService.loadMyCollections { [weak self] outcome in
-            switch outcome {
+    private func loadCollections() {
+        collectionService.loadMyCollections { [weak self] result in
+            switch result {
             case .success(let value):
                 self?.myCollections = value
                 self?.tableView.reloadData()

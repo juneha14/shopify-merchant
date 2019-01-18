@@ -3,12 +3,6 @@
 import Foundation
 
 
-enum Outcome<Value> {
-    case success(Value)
-    case failure(Error)
-}
-
-
 class CollectionService {
     private let dataLoader: DataLoader
 
@@ -19,20 +13,14 @@ class CollectionService {
 
     // MARK: API
 
-    func loadMyCollections(completion: @escaping (Outcome<[CustomCollection]>) -> Void) {
+    func loadMyCollections(completion: @escaping (Result<[CustomCollection]>) -> Void) {
         let endpoint = endpointForMyCollections()
 
         dataLoader.loadData(from: endpoint) { result in
             do {
-                switch result {
-                case .success(let data):
-                    let decoder = JSONDecoder()
-                    decoder.keyDecodingStrategy = .convertFromSnakeCase
-                    let customCollections = try decoder.decode(CustomCollection.Container.self, from: data).customCollections
-                    completion(.success(customCollections))
-                case .failure(let error):
-                    completion(.failure(error))
-                }
+                let collectionsContainer = try result.decoded() as CustomCollection.Container
+                let collections = collectionsContainer.customCollections
+                completion(.success(collections))
             } catch {
                 completion(.failure(error))
             }

@@ -5,11 +5,15 @@ import SnapKit
 
 
 class MyCollectionsTableViewCell: UITableViewCell {
-    // Set up collection property observer here to allow for functional rendering of the cell
-
     static let identifier = "MyCollectionsTableViewCell"
 
-    var collectionTitle: UILabel!
+    var collection: CustomCollection! {
+        didSet {
+            render(collection)
+        }
+    }
+
+    private var collectionTitle: UILabel!
     private var collectionImage: UIImageView!
 
 
@@ -44,5 +48,9 @@ class MyCollectionsTableViewCell: UITableViewCell {
             make.leading.equalToSuperview().inset(15)
             make.trailing.equalToSuperview().inset(15)
         }
+    }
+
+    private func render(_ collection: CustomCollection) {
+        collectionTitle.text = collection.title
     }
 }

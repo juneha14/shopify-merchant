@@ -19,6 +19,7 @@
 		CDC6873721F15CDF00DDD06F /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6873621F15CDF00DDD06F /* DataLoader.swift */; };
 		CDC6873921F1844300DDD06F /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6873821F1844300DDD06F /* Endpoint.swift */; };
 		CDC6873B21F1952D00DDD06F /* CollectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6873A21F1952D00DDD06F /* CollectionService.swift */; };
+		CDC6874121F1C9F900DDD06F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6874021F1C9F900DDD06F /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		CDC6873621F15CDF00DDD06F /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		CDC6873821F1844300DDD06F /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		CDC6873A21F1952D00DDD06F /* CollectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionService.swift; sourceTree = "<group>"; };
+		CDC6874021F1C9F900DDD06F /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		F4F017C71A489F60FBA85909 /* Pods-MerchantCollections.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MerchantCollections.release.xcconfig"; path = "Pods/Target Support Files/Pods-MerchantCollections/Pods-MerchantCollections.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,6 +178,7 @@
 				CDC6873821F1844300DDD06F /* Endpoint.swift */,
 				CDC6873A21F1952D00DDD06F /* CollectionService.swift */,
 				CDC6873621F15CDF00DDD06F /* DataLoader.swift */,
+				CDC6874021F1C9F900DDD06F /* Result.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				CDC6873521F159BF00DDD06F /* CustomCollection.swift in Sources */,
 				CDC6873221EF1EBB00DDD06F /* MyCollectionsTableViewCell.swift in Sources */,
 				CDC6873021EEFAA600DDD06F /* MyCollectionsViewController.swift in Sources */,
+				CDC6874121F1C9F900DDD06F /* Result.swift in Sources */,
 				CDC6873B21F1952D00DDD06F /* CollectionService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
