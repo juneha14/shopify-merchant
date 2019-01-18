@@ -28,6 +28,8 @@ class MyCollectionsViewController: UITableViewController {
         navigationItem.title = "My Collections"
 
         tableView.register(MyCollectionsTableViewCell.self, forCellReuseIdentifier: MyCollectionsTableViewCell.identifier)
+
+        loadData()
     }
 
 

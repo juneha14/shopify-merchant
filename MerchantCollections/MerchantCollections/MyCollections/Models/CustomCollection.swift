@@ -10,3 +10,9 @@ struct CustomCollection: Codable {
     let bodyHtml: String
     // TODO: add Image struct
 }
+
+extension CustomCollection {
+    struct Container: Codable {
+        let customCollections: [CustomCollection]
+    }
+}

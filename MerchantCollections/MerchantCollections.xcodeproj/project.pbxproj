@@ -10,8 +10,6 @@
 		46B332B5851988CDD25B1C31 /* Pods_MerchantCollections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8073B320659C7D8AF299AA /* Pods_MerchantCollections.framework */; };
 		9E014635942C41017EB4DFBA /* Pods_MerchantCollectionsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F55A6E156DD6ECE742CC2A /* Pods_MerchantCollectionsTests.framework */; };
 		CDC6871021EEEBD100DDD06F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6870F21EEEBD100DDD06F /* AppDelegate.swift */; };
-		CDC6871221EEEBD100DDD06F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6871121EEEBD100DDD06F /* ViewController.swift */; };
-		CDC6871521EEEBD100DDD06F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDC6871321EEEBD100DDD06F /* Main.storyboard */; };
 		CDC6871721EEEBD200DDD06F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDC6871621EEEBD200DDD06F /* Assets.xcassets */; };
 		CDC6871A21EEEBD200DDD06F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDC6871821EEEBD200DDD06F /* LaunchScreen.storyboard */; };
 		CDC6872521EEEBD200DDD06F /* MerchantCollectionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6872421EEEBD200DDD06F /* MerchantCollectionsTests.swift */; };
@@ -41,8 +39,6 @@
 		BDB40AEAA35D9A3098AB3E69 /* Pods-MerchantCollectionsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MerchantCollectionsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MerchantCollectionsTests/Pods-MerchantCollectionsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CDC6870C21EEEBD100DDD06F /* MerchantCollections.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MerchantCollections.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC6870F21EEEBD100DDD06F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CDC6871121EEEBD100DDD06F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CDC6871421EEEBD100DDD06F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CDC6871621EEEBD200DDD06F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDC6871921EEEBD200DDD06F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CDC6871B21EEEBD200DDD06F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -121,18 +117,12 @@
 		CDC6870E21EEEBD100DDD06F /* MerchantCollections */ = {
 			isa = PBXGroup;
 			children = (
-				CDC6873321F1598B00DDD06F /* Models */,
-				CDC6870F21EEEBD100DDD06F /* AppDelegate.swift */,
-				CDC6871121EEEBD100DDD06F /* ViewController.swift */,
-				CDC6871321EEEBD100DDD06F /* Main.storyboard */,
+				CDC6873F21F1C74900DDD06F /* Networking */,
+				CDC6873C21F1C69300DDD06F /* MyCollections */,
 				CDC6871621EEEBD200DDD06F /* Assets.xcassets */,
+				CDC6870F21EEEBD100DDD06F /* AppDelegate.swift */,
 				CDC6871821EEEBD200DDD06F /* LaunchScreen.storyboard */,
 				CDC6871B21EEEBD200DDD06F /* Info.plist */,
-				CDC6872F21EEFAA600DDD06F /* MyCollectionsViewController.swift */,
-				CDC6873121EF1EBB00DDD06F /* MyCollectionsTableViewCell.swift */,
-				CDC6873621F15CDF00DDD06F /* DataLoader.swift */,
-				CDC6873821F1844300DDD06F /* Endpoint.swift */,
-				CDC6873A21F1952D00DDD06F /* CollectionService.swift */,
 			);
 			path = MerchantCollections;
 			sourceTree = "<group>";
@@ -152,6 +142,42 @@
 				CDC6873421F159BF00DDD06F /* CustomCollection.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CDC6873C21F1C69300DDD06F /* MyCollections */ = {
+			isa = PBXGroup;
+			children = (
+				CDC6873321F1598B00DDD06F /* Models */,
+				CDC6873E21F1C70D00DDD06F /* ViewControllers */,
+				CDC6873D21F1C6B300DDD06F /* Views */,
+			);
+			path = MyCollections;
+			sourceTree = "<group>";
+		};
+		CDC6873D21F1C6B300DDD06F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CDC6873121EF1EBB00DDD06F /* MyCollectionsTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CDC6873E21F1C70D00DDD06F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CDC6872F21EEFAA600DDD06F /* MyCollectionsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CDC6873F21F1C74900DDD06F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CDC6873821F1844300DDD06F /* Endpoint.swift */,
+				CDC6873A21F1952D00DDD06F /* CollectionService.swift */,
+				CDC6873621F15CDF00DDD06F /* DataLoader.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,7 +266,6 @@
 			files = (
 				CDC6871A21EEEBD200DDD06F /* LaunchScreen.storyboard in Resources */,
 				CDC6871721EEEBD200DDD06F /* Assets.xcassets in Resources */,
-				CDC6871521EEEBD100DDD06F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,7 +353,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDC6873921F1844300DDD06F /* Endpoint.swift in Sources */,
-				CDC6871221EEEBD100DDD06F /* ViewController.swift in Sources */,
 				CDC6873721F15CDF00DDD06F /* DataLoader.swift in Sources */,
 				CDC6871021EEEBD100DDD06F /* AppDelegate.swift in Sources */,
 				CDC6873521F159BF00DDD06F /* CustomCollection.swift in Sources */,
@@ -357,14 +381,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CDC6871321EEEBD100DDD06F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CDC6871421EEEBD100DDD06F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CDC6871821EEEBD200DDD06F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -27,8 +27,9 @@ class CollectionService {
                 switch result {
                 case .success(let data):
                     let decoder = JSONDecoder()
-                    let myCollections = try decoder.decode([CustomCollection].self, from: data)
-                    completion(.success(myCollections))
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let customCollections = try decoder.decode(CustomCollection.Container.self, from: data).customCollections
+                    completion(.success(customCollections))
                 case .failure(let error):
                     completion(.failure(error))
                 }
