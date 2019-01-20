@@ -10,8 +10,6 @@ struct Endpoint {
 
     let path: String
     let queryItems: [URLQueryItem]
-
-   
 }
 
 extension Endpoint {
