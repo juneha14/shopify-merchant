@@ -32,7 +32,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
         productTitleLabel = UILabel()
 //        productTitleLabel.backgroundColor = .white
         productTitleLabel.text = "Product test very long title please tell me this is good"
-        productTitleLabel.textAlignment = .left
+        productTitleLabel.textAlignment = .center
         productTitleLabel.numberOfLines = 0
         productTitleLabel.lineBreakMode = .byWordWrapping
         productTitleLabel.textColor = .black
@@ -42,7 +42,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
         inventoryLabel = UILabel()
 //        inventoryLabel.backgroundColor = .cyan
         inventoryLabel.text = "Inventory test"
-        inventoryLabel.textAlignment = .left
+        inventoryLabel.textAlignment = .center
         inventoryLabel.numberOfLines = 1
         inventoryLabel.textColor = .black
         inventoryLabel.font = .systemFont(ofSize: 10)
@@ -56,11 +56,11 @@ class ProductCollectionViewCell: UICollectionViewCell {
         collectionTagLabel = UILabel()
 //        collectionTagLabel.backgroundColor = .brown
         collectionTagLabel.text = "Collection type test"
-        collectionTagLabel.textAlignment = .left
+        collectionTagLabel.textAlignment = .center
         collectionTagLabel.numberOfLines = 0
         collectionTagLabel.lineBreakMode = .byWordWrapping
+        collectionTagLabel.font = .italicSystemFont(ofSize: 10)
         collectionTagLabel.textColor = .gray
-        collectionTagLabel.font = .systemFont(ofSize: 10)
         addSubview(collectionTagLabel)
 
         setupConstraints()
@@ -83,26 +83,25 @@ class ProductCollectionViewCell: UICollectionViewCell {
         productTitleLabel.snp.makeConstraints { make in
             make.top.equalTo(productImageView.snp.bottom).offset(5)
             make.leading.equalToSuperview().offset(2)
-            make.trailing.equalToSuperview()
+            make.trailing.equalToSuperview().offset(-2)
         }
 
         inventoryLabel.snp.makeConstraints { make in
             make.top.equalTo(productTitleLabel.snp.bottom).offset(5)
-            make.leading.equalToSuperview().offset(2)
-            make.trailing.equalToSuperview()
+            make.centerX.equalToSuperview()
         }
 
-        tagIconImageView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(2)
-            make.width.equalToSuperview().multipliedBy(0.05)
-            make.height.equalTo(tagIconImageView.snp.width)
-            make.centerY.equalTo(collectionTagLabel.snp.centerY)
-        }
+//        tagIconImageView.snp.makeConstraints { make in
+//            make.leading.equalToSuperview().offset(2)
+//            make.width.equalToSuperview().multipliedBy(0.05)
+//            make.height.equalTo(tagIconImageView.snp.width)
+//            make.centerY.equalTo(collectionTagLabel.snp.centerY)
+//        }
 
         collectionTagLabel.snp.makeConstraints { make in
             make.top.equalTo(inventoryLabel.snp.bottom).offset(5)
-            make.leading.equalTo(tagIconImageView.snp.trailing).offset(5)
-//            make.bottom.equalToSuperview().offset(-15)
+            make.leading.equalToSuperview().offset(2)
+            make.trailing.equalToSuperview().offset(-2)
         }
     }
 

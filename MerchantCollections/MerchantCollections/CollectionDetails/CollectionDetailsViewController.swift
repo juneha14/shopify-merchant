@@ -14,8 +14,8 @@ class CollectionDetailsViewController: UIViewController, UICollectionViewDataSou
     private var collectionView: UICollectionView!
 
     private struct Constants {
-        static let minimumInteritemSpacing: CGFloat = 5
-        static let collectionViewInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        static let minimumInteritemSpacing: CGFloat = 2
+        static let collectionViewInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
     }
 
 
@@ -51,7 +51,7 @@ class CollectionDetailsViewController: UIViewController, UICollectionViewDataSou
         layout.sectionInset = collectionViewInsets
 
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .lightGray
+        collectionView.backgroundColor = .groupTableViewBackground
         collectionView.dataSource = self
         collectionView.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
         view.addSubview(collectionView)

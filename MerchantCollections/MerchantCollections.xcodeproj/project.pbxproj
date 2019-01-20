@@ -15,7 +15,7 @@
 		CDC6872521EEEBD200DDD06F /* MerchantCollectionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6872421EEEBD200DDD06F /* MerchantCollectionsTests.swift */; };
 		CDC6873021EEFAA600DDD06F /* MyCollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6872F21EEFAA600DDD06F /* MyCollectionsViewController.swift */; };
 		CDC6873221EF1EBB00DDD06F /* MyCollectionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6873121EF1EBB00DDD06F /* MyCollectionsTableViewCell.swift */; };
-		CDC6873521F159BF00DDD06F /* CustomCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6873421F159BF00DDD06F /* CustomCollection.swift */; };
+		CDC6873521F159BF00DDD06F /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6873421F159BF00DDD06F /* Models.swift */; };
 		CDC6873721F15CDF00DDD06F /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6873621F15CDF00DDD06F /* DataLoader.swift */; };
 		CDC6873921F1844300DDD06F /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6873821F1844300DDD06F /* Endpoint.swift */; };
 		CDC6873B21F1952D00DDD06F /* CollectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6873A21F1952D00DDD06F /* CollectionService.swift */; };
@@ -52,7 +52,7 @@
 		CDC6872621EEEBD200DDD06F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDC6872F21EEFAA600DDD06F /* MyCollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionsViewController.swift; sourceTree = "<group>"; };
 		CDC6873121EF1EBB00DDD06F /* MyCollectionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionsTableViewCell.swift; sourceTree = "<group>"; };
-		CDC6873421F159BF00DDD06F /* CustomCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollection.swift; sourceTree = "<group>"; };
+		CDC6873421F159BF00DDD06F /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		CDC6873621F15CDF00DDD06F /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		CDC6873821F1844300DDD06F /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		CDC6873A21F1952D00DDD06F /* CollectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionService.swift; sourceTree = "<group>"; };
@@ -127,14 +127,14 @@
 		CDC6870E21EEEBD100DDD06F /* MerchantCollections */ = {
 			isa = PBXGroup;
 			children = (
+				CDC6873321F1598B00DDD06F /* Models */,
 				CDC6873F21F1C74900DDD06F /* Networking */,
 				CDC6873C21F1C69300DDD06F /* MyCollections */,
+				CDC6874A21F4518000DDD06F /* CollectionDetails */,
 				CDC6871621EEEBD200DDD06F /* Assets.xcassets */,
 				CDC6870F21EEEBD100DDD06F /* AppDelegate.swift */,
 				CDC6871821EEEBD200DDD06F /* LaunchScreen.storyboard */,
 				CDC6871B21EEEBD200DDD06F /* Info.plist */,
-				CDC6874421F3E33700DDD06F /* CollectionDetailsViewController.swift */,
-				CDC6874621F3EA4500DDD06F /* ProductCollectionViewCell.swift */,
 			);
 			path = MerchantCollections;
 			sourceTree = "<group>";
@@ -151,7 +151,7 @@
 		CDC6873321F1598B00DDD06F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CDC6873421F159BF00DDD06F /* CustomCollection.swift */,
+				CDC6873421F159BF00DDD06F /* Models.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -159,40 +159,32 @@
 		CDC6873C21F1C69300DDD06F /* MyCollections */ = {
 			isa = PBXGroup;
 			children = (
-				CDC6873321F1598B00DDD06F /* Models */,
-				CDC6873E21F1C70D00DDD06F /* ViewControllers */,
-				CDC6873D21F1C6B300DDD06F /* Views */,
-			);
-			path = MyCollections;
-			sourceTree = "<group>";
-		};
-		CDC6873D21F1C6B300DDD06F /* Views */ = {
-			isa = PBXGroup;
-			children = (
+				CDC6872F21EEFAA600DDD06F /* MyCollectionsViewController.swift */,
 				CDC6873121EF1EBB00DDD06F /* MyCollectionsTableViewCell.swift */,
 			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		CDC6873E21F1C70D00DDD06F /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				CDC6872F21EEFAA600DDD06F /* MyCollectionsViewController.swift */,
-			);
-			path = ViewControllers;
+			path = MyCollections;
 			sourceTree = "<group>";
 		};
 		CDC6873F21F1C74900DDD06F /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				CDC6873821F1844300DDD06F /* Endpoint.swift */,
 				CDC6873A21F1952D00DDD06F /* CollectionService.swift */,
 				CDC6873621F15CDF00DDD06F /* DataLoader.swift */,
-				CDC6874021F1C9F900DDD06F /* Result.swift */,
-				CDC6874221F1D58300DDD06F /* RequestFactory.swift */,
+				CDC6873821F1844300DDD06F /* Endpoint.swift */,
 				CDC6874821F4250D00DDD06F /* ProductService.swift */,
+				CDC6874221F1D58300DDD06F /* RequestFactory.swift */,
+				CDC6874021F1C9F900DDD06F /* Result.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		CDC6874A21F4518000DDD06F /* CollectionDetails */ = {
+			isa = PBXGroup;
+			children = (
+				CDC6874421F3E33700DDD06F /* CollectionDetailsViewController.swift */,
+				CDC6874621F3EA4500DDD06F /* ProductCollectionViewCell.swift */,
+			);
+			path = CollectionDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,7 +367,7 @@
 				CDC6873721F15CDF00DDD06F /* DataLoader.swift in Sources */,
 				CDC6871021EEEBD100DDD06F /* AppDelegate.swift in Sources */,
 				CDC6874921F4250D00DDD06F /* ProductService.swift in Sources */,
-				CDC6873521F159BF00DDD06F /* CustomCollection.swift in Sources */,
+				CDC6873521F159BF00DDD06F /* Models.swift in Sources */,
 				CDC6873221EF1EBB00DDD06F /* MyCollectionsTableViewCell.swift in Sources */,
 				CDC6873021EEFAA600DDD06F /* MyCollectionsViewController.swift in Sources */,
 				CDC6874521F3E33700DDD06F /* CollectionDetailsViewController.swift in Sources */,
