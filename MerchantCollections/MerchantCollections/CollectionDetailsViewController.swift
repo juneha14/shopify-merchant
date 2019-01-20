@@ -5,6 +5,12 @@ import SnapKit
 
 
 class CollectionDetailsViewController: UIViewController, UICollectionViewDataSource {
+    private let customCollection: CustomCollection
+    private let collectionService: CollectionService
+    private let productService: ProductService
+    private var products = [Product]()
+
+
     private var collectionView: UICollectionView!
 
     private struct Constants {
@@ -15,7 +21,10 @@ class CollectionDetailsViewController: UIViewController, UICollectionViewDataSou
 
     // MARK: Initializer
 
-    init() {
+    init(customCollection: CustomCollection, collectionService: CollectionService, productService: ProductService = ProductService()) {
+        self.customCollection = customCollection
+        self.collectionService = collectionService
+        self.productService = productService
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -29,7 +38,7 @@ class CollectionDetailsViewController: UIViewController, UICollectionViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "Collection Details" // TODO: change this to actual title of the collection
+        navigationItem.title = customCollection.title
 
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -45,10 +54,11 @@ class CollectionDetailsViewController: UIViewController, UICollectionViewDataSou
         collectionView.backgroundColor = .white
         collectionView.dataSource = self
         collectionView.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
-
         view.addSubview(collectionView)
 
         setupConstraints()
+
+        loadCollects()
     }
 
 
@@ -60,7 +70,7 @@ class CollectionDetailsViewController: UIViewController, UICollectionViewDataSou
 
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 55
+        return products.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -69,7 +79,7 @@ class CollectionDetailsViewController: UIViewController, UICollectionViewDataSou
         }
     
         cell.backgroundColor = .gray
-    
+        cell.product = products[indexPath.row]
         return cell
     }
 
@@ -82,4 +92,36 @@ class CollectionDetailsViewController: UIViewController, UICollectionViewDataSou
         }
     }
 
+    private func loadCollects() {
+        collectionService.loadCollects(in: customCollection) { [weak self] result in
+            switch result {
+            case .success(let collects):
+                self?.loadProducts(from: collects)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+
+    private func loadProducts(from collects: [Collect]) {
+        let productIdsQuery = extractProductIds(from: collects)
+
+        productService.loadProducts(withProductQuery: productIdsQuery) { [weak self] result in
+            switch result {
+            case .success(let products):
+                self?.products = products
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+
+    private func extractProductIds(from collects: [Collect]) -> String {
+        var productIds = Set<String>()
+        for collect in collects {
+            productIds.insert(String(collect.productId))
+        }
+
+        return productIds.joined(separator: ",")
+    }
 }

@@ -8,7 +8,7 @@ enum Result<Value> {
     case failure(Error)
 }
 
-extension Result {
+private extension Result {
     func extract() throws -> Value {
         switch self {
         case .success(let value):

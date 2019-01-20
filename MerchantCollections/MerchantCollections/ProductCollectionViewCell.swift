@@ -7,6 +7,12 @@ import SnapKit
 class ProductCollectionViewCell: UICollectionViewCell {
     static let identifier = "ProductCollectionViewCell"
 
+    var product: Product! {
+        didSet {
+            render(product)
+        }
+    }
+
     private var productImageView: UIImageView!
     private var productTitleLabel: UILabel!
     private var inventoryLabel: UILabel!
@@ -62,6 +68,8 @@ class ProductCollectionViewCell: UICollectionViewCell {
     }
 
 
+    // MARK: Helpers
+
     private func setupConstraints() {
         productImageView.snp.makeConstraints { make in
             make.top.equalToSuperview()
@@ -93,5 +101,10 @@ class ProductCollectionViewCell: UICollectionViewCell {
             make.leading.equalTo(tagIconImageView.snp.trailing).offset(5)
             make.bottom.equalToSuperview().offset(-5)
         }
+    }
+
+    private func render(_ product: Product) {
+        productTitleLabel.text = product.title
+        
     }
 }

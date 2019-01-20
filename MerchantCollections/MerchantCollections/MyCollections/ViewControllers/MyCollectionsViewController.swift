@@ -53,8 +53,8 @@ class MyCollectionsViewController: UITableViewController {
     // MARK: UITableViewDelegate
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: navigate to the details screen with the CustomCollection at the specified indexPath
-        let collectionDetailsVC = CollectionDetailsViewController()
+        let collection = myCollections[indexPath.row]
+        let collectionDetailsVC = CollectionDetailsViewController(customCollection: collection, collectionService: collectionService)
         navigationController?.pushViewController(collectionDetailsVC, animated: true)
     }
 

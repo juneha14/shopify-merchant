@@ -27,4 +27,19 @@ class CollectionService {
             }
         }
     }
+
+    func loadCollects(in collection: CustomCollection, completion: @escaping (Result<[Collect]>) -> Void) {
+        let endpoint = RequestFactory.collects(forId: collection.id)
+
+        dataLoader.loadData(from: endpoint) { result in
+            do {
+                let collectsContainer = try result.decoded() as Collect.Container
+                let collects = collectsContainer.collects
+                completion(.success(collects))
+            } catch {
+                completion(.failure(error))
+            }
+        }
+
+    }
 }

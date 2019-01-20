@@ -9,9 +9,31 @@ final class RequestFactory {
 
     // MARK: API
 
-    static func myCollections (page: Int = 1) -> Endpoint {
+    static func myCollections(page: Int = 1) -> Endpoint {
         let path = "/admin/custom_collections.json"
         let queryItems = [
+            URLQueryItem(name: "page", value: String(page)),
+            RequestFactory.accessTokenQueryItem
+        ]
+
+        return Endpoint(path: path, queryItems: queryItems)
+    }
+
+    static func collects(page: Int = 1, forId id: UInt64) -> Endpoint {
+        let path = "/admin/collects.json"
+        let queryItems = [
+            URLQueryItem(name: "collection_id", value: String(id)),
+            URLQueryItem(name: "page", value: String(page)),
+            RequestFactory.accessTokenQueryItem
+        ]
+
+        return Endpoint(path: path, queryItems: queryItems)
+    }
+
+    static func products(page: Int = 1, forProductQuery query: String) -> Endpoint {
+        let path = "/admin/products.json"
+        let queryItems = [
+            URLQueryItem(name: "ids", value: query),
             URLQueryItem(name: "page", value: String(page)),
             RequestFactory.accessTokenQueryItem
         ]
