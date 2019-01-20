@@ -51,6 +51,8 @@ class MyCollectionsTableViewCell: UITableViewCell {
     }
 
     private func render(_ collection: CustomCollection) {
-        collectionTitle.text = collection.title
+        var title = collection.title
+        title = title.replacingOccurrences(of: "collection", with: "")
+        collectionTitle.text = title
     }
 }

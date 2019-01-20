@@ -6,6 +6,7 @@ import Foundation
 class ProductService {
     private let dataLoader: DataLoader
 
+    
     init(dataLoader: DataLoader = DataLoader()) {
         self.dataLoader = dataLoader
     }

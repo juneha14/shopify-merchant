@@ -10,8 +10,8 @@ class CollectionDetailsViewController: UIViewController, UICollectionViewDataSou
     private let productService: ProductService
     private var products = [Product]()
 
-
     private var collectionView: UICollectionView!
+    private lazy var loadingViewController = LoadingViewController()
 
     private struct Constants {
         static let minimumInteritemSpacing: CGFloat = 2
@@ -21,7 +21,7 @@ class CollectionDetailsViewController: UIViewController, UICollectionViewDataSou
 
     // MARK: Initializer
 
-    init(customCollection: CustomCollection, collectionService: CollectionService, productService: ProductService = ProductService()) {
+    init(customCollection: CustomCollection, collectionService: CollectionService = CollectionService(), productService: ProductService = ProductService()) {
         self.customCollection = customCollection
         self.collectionService = collectionService
         self.productService = productService
@@ -93,6 +93,7 @@ class CollectionDetailsViewController: UIViewController, UICollectionViewDataSou
     }
 
     private func loadCollects() {
+        add(loadingViewController)
         collectionService.loadCollects(in: customCollection) { [weak self] result in
             switch result {
             case .success(let collects):
@@ -107,6 +108,8 @@ class CollectionDetailsViewController: UIViewController, UICollectionViewDataSou
         let productIdsQuery = extractProductIds(from: collects)
 
         productService.loadProducts(withProductQuery: productIdsQuery) { [weak self] result in
+            self?.loadingViewController.remove()
+
             switch result {
             case .success(let products):
                 self?.products = products

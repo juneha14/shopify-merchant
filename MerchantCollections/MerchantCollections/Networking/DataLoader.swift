@@ -13,10 +13,9 @@ class DataLoader {
             DispatchQueue.main.async {
                 if let error = error {
                     completion(.failure(error))
-                    return
+                } else {
+                    completion(.success(data ?? Data()))
                 }
-
-                completion(.success(data ?? Data()))
             }
         }
 

@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
 
         let myCollectionsVC = MyCollectionsViewController()
-        let navigationVC = UINavigationController(rootViewController: myCollectionsVC)
+        let navigationVC = NavigationViewController(rootViewController: myCollectionsVC)
         window?.rootViewController = navigationVC
 
         return true

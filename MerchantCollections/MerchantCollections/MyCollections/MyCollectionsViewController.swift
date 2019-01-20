@@ -3,9 +3,11 @@
 import UIKit
 
 
-class MyCollectionsViewController: UITableViewController {
+class MyCollectionsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     private let collectionService: CollectionService
     private var myCollections = [CustomCollection]()
+
+    private var tableView: UITableView!
 
 
     // MARK: Initializers
@@ -27,8 +29,16 @@ class MyCollectionsViewController: UITableViewController {
 
         navigationItem.title = "My Collections"
 
+        tableView = UITableView()
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(MyCollectionsTableViewCell.self, forCellReuseIdentifier: MyCollectionsTableViewCell.identifier)
         tableView.tableFooterView = UIView()
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
 
         loadCollections()
     }
@@ -36,11 +46,11 @@ class MyCollectionsViewController: UITableViewController {
 
     // MARK: UITableViewDataSource
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myCollections.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MyCollectionsTableViewCell.identifier, for: indexPath) as? MyCollectionsTableViewCell else {
             return UITableViewCell()
         }
@@ -52,7 +62,8 @@ class MyCollectionsViewController: UITableViewController {
 
     // MARK: UITableViewDelegate
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let collection = myCollections[indexPath.row]
         let collectionDetailsVC = CollectionDetailsViewController(customCollection: collection, collectionService: collectionService)
         navigationController?.pushViewController(collectionDetailsVC, animated: true)
@@ -62,7 +73,12 @@ class MyCollectionsViewController: UITableViewController {
     // MARK: Helpers
 
     private func loadCollections() {
+        let loadingVC = LoadingViewController()
+        add(loadingVC)
+
         collectionService.loadMyCollections { [weak self] result in
+            loadingVC.remove()
+            
             switch result {
             case .success(let value):
                 self?.myCollections = value
