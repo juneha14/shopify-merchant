@@ -40,6 +40,7 @@ struct Product: Codable {
     let id: UInt64
     let title: String
     let bodyHtml: String
+    let tags: String
     let variants: [Variant]
     let image: Image
 }

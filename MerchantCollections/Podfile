@@ -7,6 +7,7 @@ target 'MerchantCollections' do
 
   # Pods for MerchantCollections
   pod 'SnapKit', '~> 4.0.0'
+  pod 'SDWebImage', '~> 4.0'
 
   target 'MerchantCollectionsTests' do
     inherit! :search_paths

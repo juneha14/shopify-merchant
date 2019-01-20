@@ -2,6 +2,7 @@
 
 import UIKit
 import SnapKit
+import SDWebImage
 
 
 class ProductCollectionViewCell: UICollectionViewCell {
@@ -24,40 +25,42 @@ class ProductCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
 
         productImageView = UIImageView(image: UIImage(named: "home"))
-        productImageView.backgroundColor = .yellow
+//        productImageView.backgroundColor = .yellow
         productImageView.contentMode = .scaleAspectFit
         addSubview(productImageView)
 
         productTitleLabel = UILabel()
-        productTitleLabel.backgroundColor = .white
+//        productTitleLabel.backgroundColor = .white
         productTitleLabel.text = "Product test very long title please tell me this is good"
         productTitleLabel.textAlignment = .left
-        productTitleLabel.numberOfLines = 1
+        productTitleLabel.numberOfLines = 0
+        productTitleLabel.lineBreakMode = .byWordWrapping
         productTitleLabel.textColor = .black
-        productTitleLabel.font = .boldSystemFont(ofSize: 14)
+        productTitleLabel.font = .boldSystemFont(ofSize: 12)
         addSubview(productTitleLabel)
 
         inventoryLabel = UILabel()
-        inventoryLabel.backgroundColor = .cyan
+//        inventoryLabel.backgroundColor = .cyan
         inventoryLabel.text = "Inventory test"
         inventoryLabel.textAlignment = .left
         inventoryLabel.numberOfLines = 1
         inventoryLabel.textColor = .black
-        inventoryLabel.font = .systemFont(ofSize: 12)
+        inventoryLabel.font = .systemFont(ofSize: 10)
         addSubview(inventoryLabel)
 
         tagIconImageView = UIImageView()
-        tagIconImageView.backgroundColor = .white
+//        tagIconImageView.backgroundColor = .white
         tagIconImageView.contentMode = .scaleAspectFit
         addSubview(tagIconImageView)
 
         collectionTagLabel = UILabel()
-        collectionTagLabel.backgroundColor = .brown
+//        collectionTagLabel.backgroundColor = .brown
         collectionTagLabel.text = "Collection type test"
         collectionTagLabel.textAlignment = .left
-        collectionTagLabel.numberOfLines = 1
-        collectionTagLabel.textColor = .black
-        collectionTagLabel.font = .systemFont(ofSize: 12)
+        collectionTagLabel.numberOfLines = 0
+        collectionTagLabel.lineBreakMode = .byWordWrapping
+        collectionTagLabel.textColor = .gray
+        collectionTagLabel.font = .systemFont(ofSize: 10)
         addSubview(collectionTagLabel)
 
         setupConstraints()
@@ -99,12 +102,20 @@ class ProductCollectionViewCell: UICollectionViewCell {
         collectionTagLabel.snp.makeConstraints { make in
             make.top.equalTo(inventoryLabel.snp.bottom).offset(5)
             make.leading.equalTo(tagIconImageView.snp.trailing).offset(5)
-            make.bottom.equalToSuperview().offset(-5)
+//            make.bottom.equalToSuperview().offset(-15)
         }
     }
 
     private func render(_ product: Product) {
+        productImageView.sd_setImage(with: URL(string: product.image.src), placeholderImage: nil, options: .continueInBackground, completed: nil)
         productTitleLabel.text = product.title
-        
+        collectionTagLabel.text = product.tags
+
+        var totalInventory = 0
+        for variant in product.variants {
+            totalInventory += variant.inventoryQuantity
+        }
+
+        inventoryLabel.text = "\(totalInventory) in stock"
     }
 }

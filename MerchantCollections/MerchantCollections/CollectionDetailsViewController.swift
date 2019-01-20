@@ -51,7 +51,7 @@ class CollectionDetailsViewController: UIViewController, UICollectionViewDataSou
         layout.sectionInset = collectionViewInsets
 
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .lightGray
         collectionView.dataSource = self
         collectionView.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
         view.addSubview(collectionView)
@@ -78,7 +78,7 @@ class CollectionDetailsViewController: UIViewController, UICollectionViewDataSou
             return UICollectionViewCell()
         }
     
-        cell.backgroundColor = .gray
+        cell.backgroundColor = .white
         cell.product = products[indexPath.row]
         return cell
     }
@@ -110,6 +110,7 @@ class CollectionDetailsViewController: UIViewController, UICollectionViewDataSou
             switch result {
             case .success(let products):
                 self?.products = products
+                self?.collectionView.reloadData()
             case .failure(let error):
                 print(error.localizedDescription)
             }
