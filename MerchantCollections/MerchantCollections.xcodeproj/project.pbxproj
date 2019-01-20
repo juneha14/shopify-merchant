@@ -10,11 +10,23 @@
 		46B332B5851988CDD25B1C31 /* Pods_MerchantCollections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8073B320659C7D8AF299AA /* Pods_MerchantCollections.framework */; };
 		9E014635942C41017EB4DFBA /* Pods_MerchantCollectionsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F55A6E156DD6ECE742CC2A /* Pods_MerchantCollectionsTests.framework */; };
 		CDC6871021EEEBD100DDD06F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6870F21EEEBD100DDD06F /* AppDelegate.swift */; };
-		CDC6871221EEEBD100DDD06F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6871121EEEBD100DDD06F /* ViewController.swift */; };
-		CDC6871521EEEBD100DDD06F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDC6871321EEEBD100DDD06F /* Main.storyboard */; };
 		CDC6871721EEEBD200DDD06F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDC6871621EEEBD200DDD06F /* Assets.xcassets */; };
 		CDC6871A21EEEBD200DDD06F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDC6871821EEEBD200DDD06F /* LaunchScreen.storyboard */; };
 		CDC6872521EEEBD200DDD06F /* MerchantCollectionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6872421EEEBD200DDD06F /* MerchantCollectionsTests.swift */; };
+		CDC6873021EEFAA600DDD06F /* MyCollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6872F21EEFAA600DDD06F /* MyCollectionsViewController.swift */; };
+		CDC6873221EF1EBB00DDD06F /* MyCollectionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6873121EF1EBB00DDD06F /* MyCollectionsTableViewCell.swift */; };
+		CDC6873521F159BF00DDD06F /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6873421F159BF00DDD06F /* Models.swift */; };
+		CDC6873721F15CDF00DDD06F /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6873621F15CDF00DDD06F /* DataLoader.swift */; };
+		CDC6873921F1844300DDD06F /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6873821F1844300DDD06F /* Endpoint.swift */; };
+		CDC6873B21F1952D00DDD06F /* CollectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6873A21F1952D00DDD06F /* CollectionService.swift */; };
+		CDC6874121F1C9F900DDD06F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6874021F1C9F900DDD06F /* Result.swift */; };
+		CDC6874321F1D58300DDD06F /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6874221F1D58300DDD06F /* RequestFactory.swift */; };
+		CDC6874521F3E33700DDD06F /* CollectionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6874421F3E33700DDD06F /* CollectionDetailsViewController.swift */; };
+		CDC6874721F3EA4500DDD06F /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6874621F3EA4500DDD06F /* ProductCollectionViewCell.swift */; };
+		CDC6874921F4250D00DDD06F /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6874821F4250D00DDD06F /* ProductService.swift */; };
+		CDC6874C21F4527900DDD06F /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6874B21F4527900DDD06F /* NavigationViewController.swift */; };
+		CDC6874E21F453BF00DDD06F /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6874D21F453BF00DDD06F /* LoadingViewController.swift */; };
+		CDC6875021F4547000DDD06F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6874F21F4547000DDD06F /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,14 +47,26 @@
 		BDB40AEAA35D9A3098AB3E69 /* Pods-MerchantCollectionsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MerchantCollectionsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MerchantCollectionsTests/Pods-MerchantCollectionsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CDC6870C21EEEBD100DDD06F /* MerchantCollections.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MerchantCollections.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC6870F21EEEBD100DDD06F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CDC6871121EEEBD100DDD06F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CDC6871421EEEBD100DDD06F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CDC6871621EEEBD200DDD06F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDC6871921EEEBD200DDD06F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CDC6871B21EEEBD200DDD06F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDC6872021EEEBD200DDD06F /* MerchantCollectionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MerchantCollectionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC6872421EEEBD200DDD06F /* MerchantCollectionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantCollectionsTests.swift; sourceTree = "<group>"; };
 		CDC6872621EEEBD200DDD06F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDC6872F21EEFAA600DDD06F /* MyCollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionsViewController.swift; sourceTree = "<group>"; };
+		CDC6873121EF1EBB00DDD06F /* MyCollectionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionsTableViewCell.swift; sourceTree = "<group>"; };
+		CDC6873421F159BF00DDD06F /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		CDC6873621F15CDF00DDD06F /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		CDC6873821F1844300DDD06F /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		CDC6873A21F1952D00DDD06F /* CollectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionService.swift; sourceTree = "<group>"; };
+		CDC6874021F1C9F900DDD06F /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		CDC6874221F1D58300DDD06F /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
+		CDC6874421F3E33700DDD06F /* CollectionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsViewController.swift; sourceTree = "<group>"; };
+		CDC6874621F3EA4500DDD06F /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		CDC6874821F4250D00DDD06F /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
+		CDC6874B21F4527900DDD06F /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		CDC6874D21F453BF00DDD06F /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		CDC6874F21F4547000DDD06F /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		F4F017C71A489F60FBA85909 /* Pods-MerchantCollections.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MerchantCollections.release.xcconfig"; path = "Pods/Target Support Files/Pods-MerchantCollections/Pods-MerchantCollections.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,10 +133,15 @@
 		CDC6870E21EEEBD100DDD06F /* MerchantCollections */ = {
 			isa = PBXGroup;
 			children = (
-				CDC6870F21EEEBD100DDD06F /* AppDelegate.swift */,
-				CDC6871121EEEBD100DDD06F /* ViewController.swift */,
-				CDC6871321EEEBD100DDD06F /* Main.storyboard */,
+				CDC6874B21F4527900DDD06F /* NavigationViewController.swift */,
+				CDC6874D21F453BF00DDD06F /* LoadingViewController.swift */,
+				CDC6874F21F4547000DDD06F /* UIViewController.swift */,
+				CDC6873321F1598B00DDD06F /* Models */,
+				CDC6873F21F1C74900DDD06F /* Networking */,
+				CDC6873C21F1C69300DDD06F /* MyCollections */,
+				CDC6874A21F4518000DDD06F /* CollectionDetails */,
 				CDC6871621EEEBD200DDD06F /* Assets.xcassets */,
+				CDC6870F21EEEBD100DDD06F /* AppDelegate.swift */,
 				CDC6871821EEEBD200DDD06F /* LaunchScreen.storyboard */,
 				CDC6871B21EEEBD200DDD06F /* Info.plist */,
 			);
@@ -126,6 +155,45 @@
 				CDC6872621EEEBD200DDD06F /* Info.plist */,
 			);
 			path = MerchantCollectionsTests;
+			sourceTree = "<group>";
+		};
+		CDC6873321F1598B00DDD06F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CDC6873421F159BF00DDD06F /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CDC6873C21F1C69300DDD06F /* MyCollections */ = {
+			isa = PBXGroup;
+			children = (
+				CDC6872F21EEFAA600DDD06F /* MyCollectionsViewController.swift */,
+				CDC6873121EF1EBB00DDD06F /* MyCollectionsTableViewCell.swift */,
+			);
+			path = MyCollections;
+			sourceTree = "<group>";
+		};
+		CDC6873F21F1C74900DDD06F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CDC6873A21F1952D00DDD06F /* CollectionService.swift */,
+				CDC6873621F15CDF00DDD06F /* DataLoader.swift */,
+				CDC6873821F1844300DDD06F /* Endpoint.swift */,
+				CDC6874821F4250D00DDD06F /* ProductService.swift */,
+				CDC6874221F1D58300DDD06F /* RequestFactory.swift */,
+				CDC6874021F1C9F900DDD06F /* Result.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		CDC6874A21F4518000DDD06F /* CollectionDetails */ = {
+			isa = PBXGroup;
+			children = (
+				CDC6874421F3E33700DDD06F /* CollectionDetailsViewController.swift */,
+				CDC6874621F3EA4500DDD06F /* ProductCollectionViewCell.swift */,
+			);
+			path = CollectionDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,7 +282,6 @@
 			files = (
 				CDC6871A21EEEBD200DDD06F /* LaunchScreen.storyboard in Resources */,
 				CDC6871721EEEBD200DDD06F /* Assets.xcassets in Resources */,
-				CDC6871521EEEBD100DDD06F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,12 +304,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MerchantCollections/Pods-MerchantCollections-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,8 +370,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDC6871221EEEBD100DDD06F /* ViewController.swift in Sources */,
+				CDC6874321F1D58300DDD06F /* RequestFactory.swift in Sources */,
+				CDC6874C21F4527900DDD06F /* NavigationViewController.swift in Sources */,
+				CDC6873921F1844300DDD06F /* Endpoint.swift in Sources */,
+				CDC6874721F3EA4500DDD06F /* ProductCollectionViewCell.swift in Sources */,
+				CDC6873721F15CDF00DDD06F /* DataLoader.swift in Sources */,
 				CDC6871021EEEBD100DDD06F /* AppDelegate.swift in Sources */,
+				CDC6874921F4250D00DDD06F /* ProductService.swift in Sources */,
+				CDC6874E21F453BF00DDD06F /* LoadingViewController.swift in Sources */,
+				CDC6873521F159BF00DDD06F /* Models.swift in Sources */,
+				CDC6873221EF1EBB00DDD06F /* MyCollectionsTableViewCell.swift in Sources */,
+				CDC6873021EEFAA600DDD06F /* MyCollectionsViewController.swift in Sources */,
+				CDC6874521F3E33700DDD06F /* CollectionDetailsViewController.swift in Sources */,
+				CDC6874121F1C9F900DDD06F /* Result.swift in Sources */,
+				CDC6873B21F1952D00DDD06F /* CollectionService.swift in Sources */,
+				CDC6875021F4547000DDD06F /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,14 +407,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CDC6871321EEEBD100DDD06F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CDC6871421EEEBD100DDD06F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CDC6871821EEEBD200DDD06F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
